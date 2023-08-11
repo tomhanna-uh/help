@@ -1,0 +1,34 @@
+---
+title: "help_1302023"
+format: html
+editor: visual
+---
+
+## Running Code
+
+Grouped by 5
+
+```{r}
+library(here)
+library(tidyverse)
+library(readr)
+gss <- read_csv(here("data","gss.csv"))
+head(gss)
+
+```
+
+```{r}
+
+age_at_first_birth_age_group_bach <- gss |> drop_na(has_bachelor_or_higher) |> group_by(age_group, has_bachelor_or_higher) |> summarise(mean_age_group = mean(age_at_first_birth, na.rm = TRUE))
+
+print(age_at_first_birth_age_group_bach, n = 28)
+
+
+```
+```{r}
+
+
+
+
+```
+
